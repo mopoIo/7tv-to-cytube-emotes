@@ -24,7 +24,8 @@ if response.status_code == 200:
     for emote in emotes:
         emote_name = emote["name"].lower()
         if emote_name not in existing_names:
-            emote_image = "https://cdn.7tv.app/emote/"+emote["id"]+"/2x"
+            # you can change the 4x for other resolution in case you want to use lowres emotes (available options are 1x 2x 3x 4x)
+            emote_image = "https://cdn.7tv.app/emote/"+emote["id"]+"/4x"
             emote_list.append({"name":emote["name"],"image":emote_image})
     existing_emotes += emote_list
     # write the new emotes to the file
